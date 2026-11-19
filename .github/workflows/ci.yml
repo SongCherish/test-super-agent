@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      # 注意：本工作流刻意只跑回归基线。种子 bug 修复、feature 实现完成后，
+      # 再打开下面两行作为下一道验收门槛。
+      - run: npm run test:baseline
+      # - run: npm run test:bugs
+      # - run: npm run test:features
+      - run: npm run demo > /dev/null

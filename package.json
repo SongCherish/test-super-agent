@@ -1,0 +1,17 @@
+{
+  "name": "calculator-learning",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "学习项目：一个极简的零依赖计算器，内置种子 bug 与 feature 练习题，用于验证 AI agent 的修 bug / 加 feature 能力",
+  "scripts": {
+    "test": "node --test test/",
+    "test:baseline": "node --test test/baseline.test.js",
+    "test:bugs": "node --test test/bugs.test.js",
+    "test:features": "node --test test/features.test.js",
+    "demo": "node demo.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
