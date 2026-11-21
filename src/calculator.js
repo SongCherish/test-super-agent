@@ -17,7 +17,7 @@ export function apply(operator, a, b) {
     case "add":
       return a + b;
     case "subtract":
-      return -1 * (a - b); // BUG（种子 bug 1）：结果为负时把符号翻转了
+      return a - b;
     case "multiply":
       return a * b;
     case "divide":
